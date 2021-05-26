@@ -1,0 +1,86 @@
+
+    <mat-card class="">
+        <!---->
+        <form [formGroup]="myForm" (ngSubmit)="submitRequestsForm()" #resetRequestsForm="ngForm" novalidate>
+            <mat-grid-list cols="2" rowHeight="400px">
+                <mat-grid-tile>
+                    <div class="controles-container">
+                      
+
+                          <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Your Username" formControlName="username">
+                            <mat-error *ngIf="handleError('username', 'required')">
+                              You must provide<strong>Your username!</strong>
+                            </mat-error>
+                          </mat-form-field>
+
+                          <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Your Fullname" formControlName="fullname">
+                            <mat-error *ngIf="handleError('fullname', 'required')">
+                              You must provide<strong>Your Fullname!</strong>
+                            </mat-error>
+                          </mat-form-field>
+                          <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Your Phone Number" formControlName="phone">
+                            <mat-error *ngIf="handleError('phone', 'required')">
+                              You must provide<strong>Your Phone Number!</strong>
+                            </mat-error>
+                          </mat-form-field>
+                          <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Your Alternate Phone Number" formControlName="altphone">
+                            <!-- <mat-error *ngIf="handleError('altphone', 'required')">
+                              You must provide<strong>correct Phone Number!</strong>
+                            </mat-error> -->
+                          </mat-form-field>
+
+                       
+
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div class="controles-container">
+
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Your Email" formControlName="email">
+                            <mat-error *ngIf="handleError('email', 'required')">
+                              You must provide<strong>Your Email</strong>
+                            </mat-error>
+                          </mat-form-field>
+
+                          <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Your Password" formControlName="password">
+                            <mat-error *ngIf="handleError('password', 'required')">
+                              You must provide<strong>Your Password!</strong>
+                            </mat-error>
+                          </mat-form-field>
+
+                          <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Confirm Your Password" formControlName="confPassword">
+                            <mat-error *ngIf="handleError('confPassword', 'required')">
+                              You must<strong>Confirm your password!</strong>
+                            </mat-error>
+                          </mat-form-field>
+                        
+                      
+
+                       
+
+                        <div class="button-row">
+                            <button mat-raised-button color="primary" type="submit"
+                                [disabled]="myForm.invalid">
+                                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                              Submit</button>
+                            <button mat-raised-button color="warn" >Clear</button>
+                        </div>
+
+
+                       
+                    </div>
+                </mat-grid-tile>
+               
+            </mat-grid-list>
+        </form>
+    </mat-card>
+
+
+

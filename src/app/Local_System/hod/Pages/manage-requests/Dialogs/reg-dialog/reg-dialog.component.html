@@ -1,0 +1,86 @@
+
+  <h1 >Register Employee</h1>
+
+
+<!-- Form -->
+<div class="inner-wrapper">
+  <form [formGroup]="studentForm" (ngSubmit)="submitStudentForm()" #resetStudentForm="ngForm" novalidate>
+    <!-- Left block -->
+    <mat-card>
+         <!-- Name -->
+         <mat-form-field class="example-full-width">
+            <input matInput placeholder="Employee Name" formControlName="fullName">
+            <mat-error *ngIf="handleError('fullName', 'required')">
+              You must provide a<strong>Employee Name</strong>
+            </mat-error>
+          </mat-form-field>
+  
+          <!-- Email -->
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Employee Email" formControlName="email">
+            <mat-error *ngIf="handleError('email', 'required')">
+              You must provide a<strong>Employee email</strong>
+            </mat-error>
+          </mat-form-field>
+             <!-- Phone -->
+             <mat-form-field class="example-full-width">
+                <input matInput placeholder="Employee Phone" formControlName="phone">
+                <mat-error *ngIf="handleError('phone', 'required')">
+                  You must provide a<strong>Employee Phone</strong>
+                </mat-error>
+              </mat-form-field>
+       
+            <!-- Section -->
+            <mat-form-field>
+              <mat-label>Job Group</mat-label>
+              <mat-select  formControlName="jobGroup">
+                <mat-option [value]="jobGroupArray" *ngFor="let jobGroupArray of JobGroupArray">{{jobGroupArray}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="handleError('jobGroup', 'required')">
+                Job Group is required
+              </mat-error>
+            </mat-form-field>
+
+               <!-- Role -->
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Employee Role" formControlName="role">
+            <mat-error *ngIf="handleError('role', 'required')">
+              You must provide a<strong>Employee Role</strong>
+            </mat-error>
+          </mat-form-field>
+  
+       
+              <!-- Section -->
+              <mat-form-field>
+                  <mat-label>Job Status</mat-label>
+                  <mat-select  formControlName="jobStatus">
+                    <mat-option [value]="jobStatusArray" *ngFor="let jobStatusArray of JobStatusArray">{{jobStatusArray}}
+                    </mat-option>
+                  </mat-select>
+                  <mat-error *ngIf="handleError('jobStatus', 'required')">
+                    Job Status is required
+                  </mat-error>
+                </mat-form-field>
+                   <!-- Email -->
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Employee Password" formControlName="password">
+            <mat-error *ngIf="handleError('password', 'required')">
+              You must provide a<strong>Employee password</strong>
+            </mat-error>
+          </mat-form-field>
+
+
+    <!-- Submit & Reset -->
+   
+      <div class="full-wrapper button-wrapper">
+        
+        <div class="button-row">
+          <button mat-raised-button color="primary" type="submit"
+              [disabled]="studentForm.invalid" (click)="closeDialog()">Submit</button>
+          <button mat-raised-button color="warn" class="pull-right" (click)="closeDialog()" >Cancel</button>
+      </div>
+      </div>
+    </mat-card>
+  </form>
+</div>

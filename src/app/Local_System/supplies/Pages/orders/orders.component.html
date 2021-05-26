@@ -1,0 +1,39 @@
+
+<!--cards-->
+<div>
+    <mat-card>
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
+          <mat-card fxFlex="25">
+            Orders
+          </mat-card>
+          <mat-card fxFlex="25">
+            Deleivered
+          </mat-card>
+          <mat-card fxFlex="25">
+            Returned
+          </mat-card>
+          <mat-card fxFlex="25">
+            Undeleivered
+          </mat-card>
+        </div>
+      
+      
+      </mat-card>
+
+</div>
+<mat-card> 
+  All Orders 
+    <flx-ui-datatable
+    [headers]="['Vendor Company','Vendor Email','Vendor Phone','Vendor Quotation','Tender Category','Batch NO','Post Date','Progress']"
+    [dataKeys]="['vendorCompany','vendorEmail','vendorPhone','vendorQuotation','tenderCategory','batchNo','postDate','progress']"
+    [dataSrcKey]="'msg'"
+    [limit]="10"
+    spinnerSrc="'Your ajax loader gif" 
+    searchPlaceholder="Enter description, fullname, or mobile to search"
+    [dataUrl]="'http://localhost:3000/read/readTenderReq'"
+   
+    ></flx-ui-datatable>
+
+
+    
+    </mat-card>

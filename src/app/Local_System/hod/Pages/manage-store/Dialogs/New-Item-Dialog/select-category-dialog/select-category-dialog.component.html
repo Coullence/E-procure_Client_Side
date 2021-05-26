@@ -1,0 +1,46 @@
+<div class="title-group">
+  <h3 class="mat-h1">
+    <strong>Select Category to Proceed Now</strong>
+  </h3>
+  <mat-divider></mat-divider>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-7 col-sm-12">
+
+      <div class="imageClass">
+        <img src="../../../../../../../assets/Images/happy.png" class="
+    img-responsive">
+      </div>
+      <!--end of header-->
+
+    </div>
+    <div class="col-md-5 col-sm-12 categories">
+      <ol>
+        <li *ngFor="let category of categories">
+
+          <button mat-raised-button color="primary" class="push-right actionButtonProcure"
+            [routerLink]="['/Admin/procure/new_item/', category._id]"
+            mat-dialog-close>{{ category.categoryName }}</button>
+
+        </li>
+      </ol>
+      
+
+      <button class="actionButtonProcure" mat-dialog-close color="accent" (click)="addCategory()" mat-raised-button>
+        <mat-icon>add</mat-icon>New Category
+      </button>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<div class="title-group">
+  <mat-divider></mat-divider>
+  <h3 class="mat-h1">
+    <strong>Ensure you are submitting correct name for Categories because it will hold alot of data associated with
+      it.</strong>
+  </h3>
+</div>

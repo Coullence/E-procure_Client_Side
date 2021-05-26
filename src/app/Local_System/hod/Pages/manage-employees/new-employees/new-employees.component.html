@@ -1,0 +1,109 @@
+<!-- Title group  -->
+<mat-card>
+<div class="title-group">
+    <h3 class="mat-h1">
+    <a routerLink="/hod">  <mat-icon class="matIcon" matListIcon >home</mat-icon> Dashboard > </a>
+    <a routerLink="/hod/newemployees">New Employees > </a>
+     <strong>New Employees Requests </strong> 
+   </h3>
+    <mat-divider></mat-divider>
+</div>
+  
+  <p *ngIf="EmployeeData.length <= 0" class="no-data">
+    <span class="mark"><h1>Oops!</h1></span><br>
+  There is no New Employees Requests!</p>
+  
+  <div class="container-fluid" *ngIf="EmployeeData.length > 0">
+    <div class="mat-elevation-z8">
+      <div class="table-head">
+
+       New Employees: <span class="count">{{dataCount}}</span> 
+
+        <mat-form-field class="search-form-field" floatLabel="never">
+          
+          <input matInput [(ngModel)]="searchKey" placeholder="Search? Start Typing..." autocomplete="off" (keyup)="applyFilter()">
+          <button mat-button matSuffix mat-icon-button aria-label="Clear"*ngIf="searchKey" (click)="onSearchClear()">
+            <mat-icon>close</mat-icon>
+          </button>
+          
+        </mat-form-field>
+        
+      <table id="myData" mat-table [dataSource]="dataSource">
+
+          <ng-container matColumnDef="Status">
+            <th mat-header-cell *matHeaderCellDef> Status </th>
+            <td mat-cell *matCellDef="let element">
+              <span class="{{element.Status}}">{{element.Status}} </span>
+              </td>
+          </ng-container>
+ 
+        <ng-container matColumnDef="employeeName">
+          <th mat-header-cell *matHeaderCellDef> Employee Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.employeeName}} </td>
+        </ng-container>
+        <ng-container matColumnDef="employeeEmail">
+            <th mat-header-cell *matHeaderCellDef> EmployeeEmail </th>
+            <td mat-cell *matCellDef="let element"> {{element.employeeEmail}} </td>
+          </ng-container>
+          <ng-container matColumnDef="employeePhone">
+            <th mat-header-cell *matHeaderCellDef> Employee Phone </th>
+            <td mat-cell *matCellDef="let element"> {{element.employeePhone}} </td>
+          </ng-container>
+          <ng-container matColumnDef="jobId">
+            <th mat-header-cell *matHeaderCellDef> Job ID </th>
+            <td mat-cell *matCellDef="let element">
+          <span class="jobId">
+            {{element.jobId}} 
+          </span>
+              </td>
+          </ng-container>
+          <ng-container matColumnDef="KRA_Pin">
+            <th mat-header-cell *matHeaderCellDef> KRA PIN </th>
+            <td mat-cell *matCellDef="let element">
+               <span class="kraPin">
+                 {{element.KRA_Pin}} 
+              </span>
+             </td>
+          </ng-container>
+          <ng-container matColumnDef="requestAs">
+            <th mat-header-cell *matHeaderCellDef> Request AS </th>
+            <td mat-cell *matCellDef="let element">
+              <span class="role">
+            {{element.requestAs}}
+          </span>
+           </td>
+          </ng-container>
+          <ng-container matColumnDef="createdAt">
+            <th mat-header-cell *matHeaderCellDef> Request on </th>
+            <td mat-cell *matCellDef="let element"> {{element.createdAt}} </td>
+          </ng-container>
+  
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef> Action </th>
+          <td mat-cell *matCellDef="let element; let i = index;">
+            <button mat-raised-button color="primary" class="push-right actionButton"
+            [routerLink]="['/hod/getEmployeeRequest/', element._id]"><mat-icon>launch</mat-icon></button>
+
+
+
+            <button mat-raised-button color="accent" (click)="deleteEmployee(i, element)" class="actionButton"><mat-icon>delete_outline</mat-icon></button>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <h3><span>Export data as:<span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span></span></h3>
+<button class="exportButton" mat-raised-button color="primary" (click)="exportAs('pdf', 'portrait')">  <mat-icon>picture_as_pdf</mat-icon>Pdf</button>
+<button class="exportButton" mat-raised-button color="accent" (click)="exportAs('png')"><mat-icon>perm_media</mat-icon>png</button>
+<button class="exportButton" mat-raised-button color="success" (click)="exportAs('csv')">csv</button>
+<button class="exportButton" mat-raised-button color="primary" (click)="exportAs('xlsx')">Ms-Excel</button>
+<button class="exportButton" mat-raised-button color="primary" (click)="exportAs('txt')">MS-Word</button>
+<button class="exportButton" mat-raised-button color="green" (click)="exportAs('json')">json</button>
+  
+      <mat-paginator [pageSizeOptions]="[24,40, 100]" showFirstLastButtons></mat-paginator>
+    </div>
+  </div>
+</div>
+</mat-card>
+  

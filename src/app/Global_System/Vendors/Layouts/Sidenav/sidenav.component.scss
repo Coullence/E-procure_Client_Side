@@ -1,0 +1,45 @@
+:host{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+mat-drawer-container{
+  height: 100%;
+  background-color: rgb(214, 214, 255);
+  scroll-behavior: hidden !important;
+}
+mat-drawer{
+  width: 200px !important;
+  font-size:8px !important;
+  scroll-behavior: hidden !important;
+}
+
+.profile-card{
+  text-align: center;
+  padding: 2x;
+  font-size: 12px !important;
+
+}
+.profile-card img{
+  width: 100px;
+  height:100px;
+  object-fit: cover;
+  border-radius: 100%;
+}
+mat-card
+{
+  margin: 5px;
+  margin-top: 5px;
+  padding: 5px;
+}
+a{
+  font-size: 12px !important;
+  color: blue !important;
+  padding: 2px !important;
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
+  margin-top: 2px !important;
+  margin-bottom: 2px !important;
+}
+
+

@@ -1,0 +1,111 @@
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+    <mat-card fxFlex="20">
+        This is an online portal where you can submit your queries. Our system hod will check a look at your request veryfy it an dthen gives you a good responce in
+        a very view minutes.Typically the procedures is straightbforward as follows:
+        <ul>
+            <li>Fill in your respective details</li>
+            <li>Ensure all the submited details are correct.</li>
+            <li>Check on the number of items you want and type </li>
+            <li>Submit your details.</li>
+        </ul>
+        The table given bellow allows you to interact with your requests. This will give you an opportunity to see and check which request you have <section>
+            keep track of request performance and afterwards verify in the producst has been deleivered to your office. follows typical process as follows;
+            <ul>
+                <li>You can view table data in the table.</li>
+                <li>You can view single request in the table by clicking view button</li>
+                <li>You can edit the requested data in the table</li>
+                <li>You can Delete a requested item in the table.</li>
+            </ul>
+        </section>
+    </mat-card>
+    <mat-card fxFlex="80">
+        <!---->
+        <form [formGroup]="vendorService.form" class="normal-form" (submit)="onSubmit()">
+            <mat-grid-list cols="2" rowHeight="400px">
+                <mat-grid-tile>
+                    <div class="controles-container">
+                        <input type="hidden" formControlName="$key">
+                        <mat-form-field>
+                            <input formControlName="vendorCompany" matInput placeholder="Your Company*">
+                            <mat-error>This field is mandatory.</mat-error>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input formControlName="vendorEmail" matInput placeholder="Company Email">
+                            <mat-error>Invalid email address.</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input formControlName="vendorPhone" matInput placeholder="Company Phone/Tel">
+                            <mat-error *ngIf="vendorService.form.controls['vendorPhone'].errors?.required">This field is
+                                mandatory.</mat-error>
+                            <mat-error *ngIf="vendorService.form.controls['vendorPhone'].errors?.minlength">Minimum 8
+                                charactors needed.</mat-error>
+                        </mat-form-field>
+
+
+
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div class="controles-container">
+                        
+     
+                        <mat-form-field>
+                            <input formControlName="vendorQuotation" matInput placeholder="Your Quoatation">
+                            <mat-error>This field is mandatory.</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <mat-select formControlName="tenderCategory" placeholder="Your Category">
+                                <mat-option>None</mat-option>
+                                <ng-container *ngFor="let prodCategory of prodCategories">
+                                    <mat-option value="{{prodCategory.value}}">{{prodCategory.value}}</mat-option>
+                                </ng-container>
+                            </mat-select>
+                        </mat-form-field>
+                        
+
+                        <mat-form-field>
+                            <input formControlName="batchNo" matInput placeholder="Items Batch No">
+                            <mat-error>This field is mandatory.</mat-error>
+                        </mat-form-field>
+
+                        <div class="button-row">
+                            <button mat-raised-button color="primary" type="submit"
+                                [disabled]="vendorService.form.invalid">Bind</button>
+                            <button mat-raised-button color="warn" (click)="onClear()">Cancel</button>
+                        </div>
+
+
+                       
+                    </div>
+                </mat-grid-tile>
+               
+            </mat-grid-list>
+        </form>
+    </mat-card>
+    <mat-card fxFlex="20">
+        <h1><span>NOTE</span></h1>
+        All the submited request pass through a series of validation. So dont anticipate for imediate responce of the system in termas of
+        request processing. <br><br>
+        It might be sunjected to some delays since it must undergo through a series of validations in procurement department before the actual final 
+        conclusio has been reached <br><br>
+        When the ststus has changed form processing to approved, wait for alittle time as the item is being tranafered diresctly to your location. <br>
+        Incase of any inconvinienceis, you may visit procurement office, or make some calls to the office, request or service desk for some assistance. 
+        <br>
+        <br>
+        <br>
+        Thank you.<br>
+        Recards, procurement group.
+    </mat-card>
+
+
+</div>
+
+
+
+<mat-card> 
+    <h2>All Bindings</h2>
+ <app-bindings></app-bindings>
+    
+</mat-card>

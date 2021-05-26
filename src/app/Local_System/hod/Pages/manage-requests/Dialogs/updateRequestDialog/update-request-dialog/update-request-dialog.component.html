@@ -1,0 +1,46 @@
+
+<mat-card>
+    <h1 >Update Requests Status</h1>
+  
+  
+    <!-- Form -->
+    <div class="inner-wrapper">
+      <form [formGroup]="requestsForm" (ngSubmit)="updateRequestsForm()" #resetRequestsForm="ngForm" novalidate>
+        <!-- Left block -->
+     
+             <!-- Name -->
+           
+      
+          
+            
+           
+                <!-- Section -->
+                <mat-form-field>
+                  <mat-label>Requests Status</mat-label>
+                  <mat-select  formControlName="reqStatus">
+                    <mat-option [value]="requestsStatusArray" *ngFor="let  requestsStatusArray of  RequestsStatusArray">{{ requestsStatusArray}}
+                    </mat-option>
+                  </mat-select>
+                  <mat-error *ngIf="handleError('reqStatus', 'required')">
+                    Requests Status is required
+                  </mat-error>
+                </mat-form-field>
+    
+               
+    
+        <!-- Submit & Reset -->
+       
+          <div class="full-wrapper button-wrapper">
+            
+            <div class="button-row">
+              <button mat-raised-button color="primary" type="submit"
+                  [disabled]="requestsForm.invalid">Submit</button>
+              <button mat-raised-button color="warn" class="pull-right" (click)="closeUpdate()" >Cancel</button>
+          </div>
+          </div>
+     
+      </form>
+    </div>
+  
+  </mat-card>
+    

@@ -1,0 +1,52 @@
+
+
+    <mat-nav-list>
+        <div class="profile-card">
+          <img src="../../../../assets/Images/user-avatar.jpg">
+          <div class="header">
+            <h2>{{role}}</h2>
+            <div class="Status">Online</div>
+            <h4>{{username}}</h4>
+          </div>
+        </div><!--end of header-->
+        <mat-divider></mat-divider>
+        <h2 matSubheader>Pages</h2>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/Admin">
+          <mat-icon>dashboard</mat-icon>
+          Dashboard</a>
+
+          
+          <a mat-list-item routerLinkActive="list-item-active" routerLink="/Admin/managestore">View Store</a>
+          <a mat-list-item routerLinkActive="list-item-active" routerLink="/Admin/managerequests">Manage Requests</a>
+          <a mat-list-item routerLinkActive="list-item-active" routerLink="/Admin/managetenders">Manage Tenders</a>
+          <a mat-list-item routerLinkActive="list-item-active" routerLink="/Admin/tenderrequest">Tender Requests</a>
+          <a mat-list-item routerLinkActive="list-item-active" routerLink="/Admin/manageinvoices">Manage Invoices</a>
+          
+
+          <!-- <button mat-flat-button [matMenuTriggerFor]="subMenu" >Manage Employees</button> -->
+
+          <!-- <mat-menu #subMenu="matMenu" class="submenu">
+            <button mat-menu-item routerLinkActive="list-item-active" routerLink="/Admin/manageorders" >+ New Employee</button>
+            <button mat-menu-item routerLinkActive="list-item-active" routerLink="/Admin/newemployees" >New Employees</button>
+            <button mat-menu-item routerLinkActive="list-item-active" routerLink="/Admin/manageemployees" >Manage Employee </button>
+          </mat-menu> -->
+
+
+
+          <!-- <a mat-list-item routerLinkActive="list-item-active" routerLink="/Admin/manageorders">Manage Orders</a> -->
+          <a mat-list-item routerLinkActive="list-item-active" routerLink="/Admin/managesuppliers">Manage Suppliers</a>
+          <a mat-list-item routerLinkActive="list-item-active" routerLink="/Admin/managestaffs" ><span matBadge="{{newStaff}}" matBadgeOverlap="false" matBadgeColor="accent">Manage Staff</span></a>
+          <!-- <a mat-list-item routerLinkActive="list-item-active" routerLink="/Admin/mangepurchases">Manage Purchases</a> -->
+          <!-- <a mat-list-item routerLinkActive="list-item-active" routerLink="/Admin/mangesupplies">Manage Supplies</a> -->
+          <!-- <a mat-list-item routerLinkActive="list-item-active" routerLink="/Admin/managevendors">Manage Vendors</a> -->
+          <a mat-list-item routerLinkActive="list-item-active" routerLink="/Admin/allRegisteredUsers">All Registered Users</a>
+    
+        <mat-divider></mat-divider>
+  
+  
+  
+  
+      </mat-nav-list>
+  
+  
+  

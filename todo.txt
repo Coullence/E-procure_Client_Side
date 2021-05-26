@@ -1,0 +1,19 @@
+find how to update data using a column in nodejs
+
+afterwards find by column names and update accordinly
+
+find{column = columned & column = column }
+{
+	update its count to---
+}
+
+
+
+adding New item process                                                       
+
+click on add new
+> it will redirect you to page which will ask you to select category.
+> if category is not there, proceed to create otherwise, select a category.
+> upon selected category will populate its id which will be captured as a snapshot router event.
+> having captured category id, the a form will just be rendered with a 1 or 2 form fields which will accept items details and on submit event, it will submit the item details/data concatenated with an id of category which will appear as a foreign key in items collections. 
+> This will create an idirect relation of item to supplier and vice versa, via categories as a pivote table.

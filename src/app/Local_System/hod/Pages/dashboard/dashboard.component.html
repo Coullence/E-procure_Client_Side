@@ -1,0 +1,122 @@
+<!--cards-->
+<div>
+  <mat-card>
+    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
+     
+      <mat-card fxFlex="25">
+       <u><b> } </b>Items in Store</u>
+        <br><br>e
+        <a routerLink="/Admin/managestore">
+           {{ newItemsCount  }} 
+            
+        </a>
+      </mat-card>
+      
+   
+      <mat-card fxFlex="25">
+       <u><b> } </b> Open Tenders</u>
+        <br><br>
+        <a routerLink="/Admin/managestaffs" fxLayoutGap="20px">
+           {{ openTendersCount }}
+            
+        </a>
+      </mat-card>
+      <mat-card fxFlex="25">
+        <u><b> } </b>Closed Tenders</u>
+          <br><br>
+        <a routerLink="/Admin/managesuppliers">
+           {{ closedTendersCount  }}
+            
+        </a>
+      </mat-card>
+      <mat-card fxFlex="25">
+        <u><b> } </b>Staff Requests</u>
+          <br><br>
+        <a routerLink="/Admin/managerequests">
+           {{ requestCount }}
+            
+        </a>
+      </mat-card>
+    </div>
+
+
+  </mat-card>
+
+</div>
+<!--Graph-->
+
+
+  <mat-card>
+    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
+     
+      <mat-card fxFlex="25">
+       <u><b> } </b>Approved Staffs</u>
+        <br><br>
+        <a routerLink="/Admin/managestaffs">
+           {{ staffCount }}
+            
+        </a>
+      </mat-card>
+      
+   
+      <mat-card fxFlex="25">
+       <u><b> } </b> Approved Suppliers</u>
+        <br><br>
+        <a routerLink="/Admin/managestaffs" fxLayoutGap="20px">
+           {{ staffCount }}
+            
+        </a>
+      </mat-card>
+      <mat-card fxFlex="25">
+        <u><b> } </b>Invoices</u>
+          <br><br>
+        <a routerLink="/Admin/managesuppliers">
+          {{ staffCount }}
+            
+        </a>
+      </mat-card>
+      <mat-card fxFlex="25">
+        <u><b> } </b>Un approved Users</u>
+          <br><br>
+        <a routerLink="/Admin/managevendors">
+          {{ staffCount }}
+            
+        </a>
+      </mat-card>
+    </div>
+
+
+  </mat-card>
+  <!-- <div>
+  <mat-card>
+    <app-line-graph></app-line-graph>
+  </mat-card>
+
+</div> -->
+
+<!--Tables-->
+<div class="tableStatistics">
+  <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="tables">
+    <mat-card fxFlex="50">
+      <app-tenders></app-tenders>
+    </mat-card>
+    <mat-card fxFlex="50">
+      <app-store></app-store>
+    </mat-card>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="tables">
+    <mat-card fxFlex="50">
+      <app-suppliers></app-suppliers>
+    </mat-card>
+    <mat-card fxFlex="50">
+      <app-staff></app-staff>
+    </mat-card>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="tables">
+    <mat-card fxFlex="100">
+  
+      <app-staffrequests></app-staffrequests>
+    </mat-card>
+  </div>
+
+</div>

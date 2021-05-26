@@ -1,0 +1,88 @@
+
+
+        <!---->
+        <form [formGroup]="myForm" (ngSubmit)="updateRequestsForm()" #resetRequestsForm="ngForm" novalidate>
+            <mat-grid-list cols="2" rowHeight="400px">
+                <mat-grid-tile>
+                    <div class="controles-container">
+                      
+
+                          <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Your Title" formControlName="title">
+                            <mat-error *ngIf="handleError('title', 'required')">
+                              You must provide<strong>Your Title!</strong>
+                            </mat-error>
+                          </mat-form-field>
+
+                          <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Your First Name" formControlName="firstName">
+                            <mat-error *ngIf="handleError('firstName', 'required')">
+                              You must provide<strong>Your First Name!</strong>
+                            </mat-error>
+                          </mat-form-field>
+                          <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Your Last Name" formControlName="lastName">
+                            <mat-error *ngIf="handleError('lastName', 'required')">
+                              You must provide<strong>Your Last Name!</strong>
+                            </mat-error>
+                          </mat-form-field>
+                          <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Your Email" formControlName="email">
+                            <mat-error *ngIf="handleError('email', 'required')">
+                              You must provide<strong>Your Email!</strong>
+                            </mat-error>
+                          </mat-form-field>
+
+                       
+
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div class="controles-container">
+
+
+                          <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Your Previous Password" formControlName="password">
+                            <mat-error *ngIf="handleError('password', 'required')">
+                              You must provide<strong>Correct Previous Password!</strong>
+                            </mat-error>
+                          </mat-form-field>
+
+                          <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Your New Password" formControlName="password">
+                            <mat-error *ngIf="handleError('password', 'required')">
+                              You must provide<strong>Your Password!</strong>
+                            </mat-error>
+                          </mat-form-field>
+
+
+                          <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Confirm Your Password" formControlName="confirmPassword">
+                            <mat-error *ngIf="handleError('confirmPassword', 'required')">
+                              You must<strong>Confirm your password!</strong>
+                            </mat-error>
+                          </mat-form-field>
+                        
+                      
+
+                       
+
+                        <div class="button-row">
+
+                          <button mat-raised-button color="warn" mat-dialog-close  >Clear</button>
+
+                            <button mat-raised-button color="primary" type="submit"
+                                [disabled]="myForm.invalid" mat-dialog-close >
+                                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                              Submit</button>
+                        </div>
+                       
+                    </div>
+                </mat-grid-tile>
+               
+            </mat-grid-list>
+        </form>
+        <div class="infoSection">
+         Changing or updating any single detail will log you ou of the system for a cache clean-up.So, you supposly have to login again.
+              
+          </div>

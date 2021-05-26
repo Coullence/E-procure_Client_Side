@@ -1,0 +1,84 @@
+.pull-right{
+	float: right !important;
+}
+.pull-left{
+	float: left !important;
+}
+
+    #invoice {
+    width: 800px !important;
+    background-color: white !important;
+    font-family: monospace !important;
+    padding: 20px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    float: center;
+  }
+ 
+  .pd-5{
+  	padding: 5px;
+  }
+/*  mat-card.formSection{
+    padding: 5px !important;
+    margin: 5px !important;
+    height: 80% !important;
+    width: 85% !important;
+    margin-bottom: 5px !important;
+
+  }*/
+
+  .title-group{
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+  }
+
+  h3{
+    font-family: Aerial;
+    font-size: 16px;
+    color: blue;
+} 
+ h4{
+    font-family: Aerial;
+    font-size: 12px;
+    color: black;
+}
+.invoiceSection{
+  margin: auto !important;
+}
+
+
+/*Header area*/
+.right{
+	text-align: right;
+	float: right;
+}
+.left{
+	text-align: left;
+	float: left;
+}
+.center{
+	text-align: center !important;
+	padding: 5px;
+	margin: auto;
+}
+.title{
+	text-align: center !important;
+	float: right !important;
+	background: red;
+	padding: 20px;
+	font-size: 26px;
+	margin: 5px;
+	width: 250px;
+}
+.date{
+	padding: 10px;
+	margin: auto;
+	background-color: skyblue;
+}
+table{
+	width: 100%;
+}
+.text-right{
+	text-align: right;
+}

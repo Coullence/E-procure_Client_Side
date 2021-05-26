@@ -1,0 +1,27 @@
+
+
+.header{
+  width: 100%;
+  height: 40%;
+  margin: auto;
+  background-image: url('../../../assets/Images/header.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.welcomeImg img{
+    width: 500px;
+    height:400px;
+    object-fit: cover;
+    background-repeat: no-repeat;
+
+}
+.request{
+  width: 100% !important;
+  margin: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.request a{
+  text-align: center;
+}

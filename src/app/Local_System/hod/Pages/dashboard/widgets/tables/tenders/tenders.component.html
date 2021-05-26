@@ -1,0 +1,53 @@
+<!-- Title group  -->
+
+    <h3 class="mat-h1">Tenders</h3>
+
+  
+  <p *ngIf="TenderData.length <= 0" class="no-data">There is no Tenders added yet!</p>
+  
+  <div class="container-fluid" *ngIf="TenderData.length > 0">
+    <div class="mat-elevation-z8">
+      <mat-form-field class="search-form-field" floatLabel="never">
+        
+        <input matInput [(ngModel)]="searchKey" placeholder="Search? Start Typing..." autocomplete="off" (keyup)="applyFilter()">
+        <button mat-button matSuffix mat-icon-button aria-label="Clear"*ngIf="searchKey"  (click)="onSearchClear()">
+          <mat-icon>close</mat-icon>
+        </button>
+        
+      </mat-form-field>
+      <table mat-table [dataSource]="dataSource">
+        'itemName','itemQuantity','tenderStatus','post on'
+  
+        <ng-container matColumnDef="itemName">
+          <th mat-header-cell *matHeaderCellDef> Item Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.itemName}} </td>
+        </ng-container>
+        <ng-container matColumnDef="itemQuantity">
+            <th mat-header-cell *matHeaderCellDef>Item Quantity</th>
+            <td mat-cell *matCellDef="let element"> {{element.itemQuantity}} </td>
+          </ng-container>
+          <ng-container matColumnDef="tenderStatus">
+            <th mat-header-cell *matHeaderCellDef>Tender Status</th>
+            <td mat-cell *matCellDef="let element">  <span class="{{element.tenderStatus}}"> {{element.tenderStatus}} </span> </td>
+          </ng-container>
+          <ng-container matColumnDef="createdAt">
+            <th mat-header-cell *matHeaderCellDef> Posted On </th>
+            <td mat-cell *matCellDef="let element"> {{element.createdAt}} </td>
+          </ng-container>
+
+
+
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+  
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    </div>
+  </div>
+
+  <br>
+<a routerLink="/Admin/managetenders">Readmore...</a>
+
+
+  

@@ -1,0 +1,36 @@
+mat-card{
+    margin: 5px;
+  }
+  ng-container{
+    margin: 10px;
+  }
+  table{
+    width: 100%;
+    padding: 10px;
+  }
+  button{
+    margin: 5px;
+  }
+  .table-head{
+    background-color: white;
+  }
+  .table-head button{
+    float: left;
+  }
+  .table-head mat-form-field {
+    float: right;
+    width: 20%;
+  }
+  .tenderStatus{
+      background-color: green;
+  }
+  b{
+      color: blue;
+      background-color: rgb(71, 250, 0);
+      padding: 10px;
+      border-radius: 8px;
+  }
+  #batchNO{
+      font-weight: 600;
+      color: red;
+  }

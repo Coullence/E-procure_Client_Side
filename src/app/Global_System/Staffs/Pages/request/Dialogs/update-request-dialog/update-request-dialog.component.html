@@ -1,0 +1,87 @@
+<mat-card >
+
+    <form [formGroup]="requestsForm" (ngSubmit)="updateRequestsForm()" #resetRequestsForm="ngForm" novalidate>
+        <mat-grid-list cols="2" rowHeight="400px">
+            <mat-grid-tile>
+                <div class="controles-container">
+                
+                      <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Your Name" formControlName="staffName">
+                        <mat-error *ngIf="handleError('staffName', 'required')">
+                          You must provide<strong>Your work Name!</strong>
+                        </mat-error>
+                      </mat-form-field>
+
+                      <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Your Email" formControlName="staffEmail">
+                        <mat-error *ngIf="handleError('staffEmail', 'required')">
+                          You must provide<strong>Your work Email!</strong>
+                        </mat-error>
+                      </mat-form-field>
+                      <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Your Phone Number" formControlName="staffPhone">
+                        <mat-error *ngIf="handleError('staffPhone', 'required')">
+                          You must provide<strong>Your Phone Number!</strong>
+                        </mat-error>
+                      </mat-form-field>
+                      <mat-form-field>
+                        <mat-label>Job Group</mat-label>
+                        <mat-select  formControlName="jobGroup">
+                          <mat-option [value]="jobGroupArray" *ngFor="let jobGroupArray of JobGroupArray">{{jobGroupArray}}
+                          </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="handleError('jobGroup', 'required')">
+                          Job Group is required
+                        </mat-error>
+                      </mat-form-field>
+
+                   
+
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <div class="controles-container">
+
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Request Name" formControlName="reqName">
+                        <mat-error *ngIf="handleError('reqName', 'required')">
+                          You must provide a<strong>Request Name</strong>
+                        </mat-error>
+                      </mat-form-field>
+
+                      <mat-form-field>
+                        <mat-label>Request Category</mat-label>
+                        <mat-select  formControlName="prodCategory">
+                          <mat-option [value]="requestCategoryArray" *ngFor="let requestCategoryArray of RequestCategoryArray">{{requestCategoryArray}}
+                          </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="handleError('prodCategory', 'required')">
+                          Request Category is required
+                        </mat-error>
+                      </mat-form-field>
+
+                      <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Quantity" formControlName="prodQuantity">
+                        <mat-error *ngIf="handleError('prodQuantity', 'required')">
+                          You must provide the<strong>Quantity of your Requested Items!</strong>
+                        </mat-error>
+                      </mat-form-field>
+                    
+                  
+
+                   
+
+                    <div class="button-row">
+                        <button mat-raised-button color="primary" type="submit"
+                            [disabled]="requestsForm.invalid">Submit</button>
+                        <button mat-raised-button color="warn" (click)="closeUpdate()" >Cancel</button>
+                    </div>
+
+
+                   
+                </div>
+            </mat-grid-tile>
+           
+        </mat-grid-list>
+    </form>
+</mat-card>

@@ -1,0 +1,17 @@
+mat-card
+{
+  margin: 5px;
+}
+.stats-cards mat-card{
+  background-image: url(../../../../../assets/Images/Orders.png);
+  background-repeat: no-repeat;
+  height: 150px;
+}
+.maincontainer{
+  height: 100%;
+  overflow: hidden;
+  background-color: red;
+}
+.dataScrollContent{
+  height: 700px;
+}

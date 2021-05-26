@@ -1,0 +1,35 @@
+mat-card
+{
+  margin: 5px;
+  padding: 5px;
+  width: 89% !important;
+}
+.stats-cards  mat-card{
+  background-image: url(../../../../../assets/Images/Orders.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 120px;
+  width: 100%;
+  font-weight: 500;
+  color: green;
+  font-family: monospace;
+}
+.stats-cards a {
+  font-size: 60px;
+  font-weight: 800;
+  font-family: 'Times New Roman', Times, serif;
+  margin: auto;
+  margin-left: 30%;
+  margin-top: 50%;
+}
+.tableStatistics{
+  
+  width: 90% !important;
+}
+a{
+  font-family: Aerial;
+  color: blue;
+
+}
+
+

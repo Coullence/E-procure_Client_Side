@@ -1,0 +1,175 @@
+
+  mat-card{
+    padding: 5px !important;
+    margin: 5px !important;
+    height: 97% !important;
+    width: 90% !important;
+    margin-bottom: 5px !important;
+  }
+  .title-group{
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    font-family: Aerial;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    color: green;
+
+  }
+  h3{
+    font-family: Aerial;
+    font-size: 12px;
+    color: green;
+}
+  table{
+    width: 100%;
+    padding: 5px;
+  }
+  th{
+  font-size: 12px;
+  font-weight: 400;
+  text-decoration: underline;
+  color: blue;
+
+  }
+  mat-icon{
+    font-size: 16px !important;
+    width: 16px !important;
+  }
+
+/*  .actionButton{
+      width: 40px!important;
+      min-width: unset!important;
+      padding: auto;
+      margin: 2px;
+      text-align: center;
+}*/
+
+.search-form-field{
+  color: blue !important;
+  font-weight: 300 !important;
+}
+
+.actionButton {
+    width: 50px!important;
+    min-width: unset!important;
+    height: 25px;
+    line-height: 25px;
+    padding: auto;
+    margin: 2px;
+
+    .mat-icon {
+      font-size: 25px;
+      width: 25px;
+      height: 25px;
+      line-height: 25px;
+    }
+  }
+
+  td{
+  font-size: 10px;
+}
+
+  .container-fluid{
+      margin: 0px;
+  }
+  
+  .table-head{
+    background-color: white;
+  }
+  .table-head button{
+    float: left;
+  }
+ mat-form-field {
+    float: right;
+  }
+  mat-raised-button{
+    padding: 0px !important;
+  }
+ 
+
+form{
+    padding: 10px;
+}
+.formSection{
+    margin: auto !important;
+  
+}
+mat-form-field{
+    margin: 5px;
+    padding: 5px;
+    color: black;
+    width: 90%;
+    
+}
+button{
+    float: right;
+    margin: 5px;
+   
+}
+mat-raised-button{
+    padding: 10px;
+
+}
+
+
+
+
+.formSection{
+  margin: auto !important;
+}
+.supData {
+  background-color: skyblue;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+}
+
+.supData h4{
+
+    font-family: Aerial;
+    font-size: 16px;
+    color: black;
+}
+.supData p{
+
+    font-family: Aerial;
+    letter-spacing: 1.5;
+    text-decoration: underline;
+    font-size: 12px;
+    color: white;
+}
+
+.form{
+    margin: 5px;
+
+}
+button{
+  margin: 10px;
+}
+mat-form-field{
+    width: 100%;
+}
+.supplierData{
+  border: solid 1px black;
+  border-radius: 8px;
+  padding: 5px;
+}
+.pull-right{
+  float: right
+}
+.coution{
+  background-color: pink;
+  color: blue;
+  font-family: monospace;
+  font-style: italic;
+  padding: 10px;
+  margin: 5px;
+  border-radius:18px;
+}
+.detailsHeader #text-left{
+  text-align: left;
+}
+.detailsHeader #text-right{
+  text-align: right;
+}

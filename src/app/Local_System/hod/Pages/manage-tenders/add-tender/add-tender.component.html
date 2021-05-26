@@ -1,0 +1,102 @@
+<!-- Title group  -->
+<mat-card>
+<div class="title-group">
+    <h3 class="mat-h1">
+    <a routerLink="/Admin">Dashboard > </a>
+    <a routerLink="/Admin/managetenders">Manage Tenders > </a>
+    <a routerLink="/Admin/manage_categories">Manage Categories > </a>
+     <strong>Post Tender</strong> 
+    </h3>
+    <mat-divider></mat-divider>
+</div>
+  
+  
+  <p *ngIf="categories.length <= 0" class="no-data">There is no New users yet added yet!</p>
+  
+  <div class="container-fluid" *ngIf="categories.length > 0">
+
+            <div class="row">
+          <div class="col-md-2 col-sm-12 categories">
+            <h4> 
+      <mat-icon>menu</mat-icon>Categories</h4>
+           
+      <h2><b>All Items</b></h2>
+            <ol>
+
+                 <li *ngFor="let category of categories">
+
+          <a routerLinkActive="list-item-active" [routerLink]="['/Admin/categorised/items_data/', category._id]">
+                  {{ category.categoryName }}
+                </a>
+
+                </li>
+
+            </ol>
+
+          </div>
+
+
+          <div class="col-md-10 col-sm-12">
+
+        <mat-card class="formSection mat-elevation-z8" fxFlex="100">
+
+        <!---->
+        <form [formGroup]="myForm" (ngSubmit)="submitRequestsForm()" #resetRequestsForm="ngForm" novalidate>
+            <h4>Post New Tender</h4>
+<div class="row">
+    
+               <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Enter Item Name" formControlName="itemName">
+                            <mat-error *ngIf="handleError('itemName', 'required')">
+                              You must provide<strong>Item Name!</strong>
+                            </mat-error>
+                 </mat-form-field>
+
+
+
+               <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Item Quantity" formControlName="itemQuantity">
+                            <mat-error *ngIf="handleError('itemQuantity', 'required')">
+                              You must provide<strong>Item Quantity!</strong>
+                            </mat-error>
+                 </mat-form-field>
+
+
+            
+               <mat-form-field class="example-full-width">
+
+                <input matInput placeholder="Due Date? Please, click on the icon here ==>>"  formControlName="dueDate" [matDatepicker]="myDatePicker" [matDatepickerFilter]="dateFilter" [min]="minDate">
+                <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
+                <mat-datepicker #myDatePicker></mat-datepicker>
+
+                <mat-error *ngIf="handleError('dueDate', 'required')">
+                              You must provide<strong>Due Date!</strong>
+                </mat-error>
+
+                 </mat-form-field>
+
+             </div>
+
+                          
+                        <div class="button-row">
+                            <button mat-raised-button color="primary" type="submit"
+                                [disabled]="myForm.invalid">
+                                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                              Submit</button>
+
+                        <a routerLink="/Admin/manage_categories">
+                            <button mat-raised-button color="warn" >Cancel</button>
+                        </a>
+                        </div>
+
+
+        </form>
+    </mat-card>
+
+
+        </div>
+    <!-- Table ending -->
+  </div>
+</div>
+</mat-card>
+  

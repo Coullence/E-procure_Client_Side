@@ -1,0 +1,159 @@
+<!-- Title group  -->
+<div class="breadcrum">
+    </div>
+    
+    <div class="registerWrapper">
+    <mat-card>
+    <div class="title-group">
+        <h3 class="mat-h1">
+         <strong>Register Now</strong> 
+       </h3>
+        <mat-divider></mat-divider>
+    </div>
+      
+    <div>
+     <div class="formSection">
+            <!---->
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-7 col-sm-12 supplierData"> 
+                  <div class="row">
+                    <div class="col-md-7">
+                       <h2>Your Account Details</h2> 
+                    </div>
+                    <div class="col-md-5">
+    
+                       <div class="pull-right">
+    
+            <button mat-raised-button color="default" (click)="updateAccount()" >
+              <mat-icon>person_outline</mat-icon>
+              <span>Update</span>
+            </button>
+    
+    
+                       </div>
+    
+                    </div>
+                  </div>
+    
+                <div class="row">
+                  <div class="col-md-6 col-sm-12">
+                      <div class="supData">
+                      <h4>First Name</h4>
+                      <p>{{employeeFirstName}}</p>
+                      </div>
+    
+                      <div class="supData">
+                      <h4>Title</h4>
+                      <p>{{employeeTitle}}</p>
+                      </div>
+    
+                      <div class="supData">
+                      <h4>Registered On</h4>
+                      <p>{{employeeRegOn}}</p>
+                      </div>
+                  </div>
+                  <div class="col-md-6 col-sm-12">
+    
+                      <div class="supData">
+                      <h4>Last Name</h4>
+                      <p>{{employeeLastName}}</p>
+                      </div>
+    
+                      <div class="supData">
+                        <h4>Your Email</h4>
+                        <p>{{employeeEmail}}</p>
+                        </div>
+    
+                      <div class="supData">
+                      <h4>Updated On</h4>
+                      <p>{{updateOn}}</p>
+                      </div>
+                  </div>
+                </div> 
+            <div class="row coution">
+              <h4>Note!</h4>
+              <p>While submiting for your request, <strong>Ensure</strong> You submit the correct details becouse all data will undergo screening and extreme analysis before accepting your applications.Please refer to our policy for more information.
+              </p>
+            </div>
+    
+                </div>
+    
+                <div class="col-md-5 col-sm-12">
+                  <div class="row form">
+              
+            <form [formGroup]="requestsForm" (ngSubmit)="submitRequestsForm()" #resetRequestsForm="ngForm" novalidate>
+    
+                      <h2>Fill in your <strong>Correct</strong> details here.</h2>
+                        
+                              <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Valid Job ID" formControlName="jobId">
+                                <mat-error *ngIf="handleError('jobId', 'required')">
+                                  You must provide<strong>Valid Job ID Name!</strong>
+                                </mat-error>
+                              </mat-form-field>
+    
+                        
+                              <mat-form-field class="example-full-width">
+                                <input matInput placeholder="+254*********" formControlName="employeePhone">
+                                <mat-error *ngIf="handleError('employeePhone', 'required')">
+                                  You must provide<strong>Valid Employee Phone!</strong>
+                                </mat-error>
+                              </mat-form-field>
+    
+                              <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Your KRA PIN" formControlName="KRA_Pin">
+                                <mat-error *ngIf="handleError('KRA_Pin', 'required')">
+                                  You must provide<strong>Your KRA PIN!</strong>
+                                </mat-error>
+                              </mat-form-field>
+    
+                               <mat-form-field>
+                                <mat-label>Job Group</mat-label>
+                                <mat-select  formControlName="jobGroup">
+                                  <mat-option [value]="jobGroupArray" *ngFor="let jobGroupArray of JobGroupArray">{{jobGroupArray}}
+                                  </mat-option>
+                                </mat-select>
+                                <mat-error *ngIf="handleError('jobGroup', 'required')">
+                                 <strong>Job Group</strong>  is required
+                                </mat-error>
+                              </mat-form-field>
+    
+                              <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Your National ID" formControlName="National_Id">
+                                <mat-error *ngIf="handleError('National_Id', 'required')">
+                                  You must provide <strong>Your National ID!</strong>
+                                </mat-error>
+                              </mat-form-field>
+                              
+                               <mat-form-field>
+                                <mat-label>Requests AS:</mat-label>
+                                <mat-select  formControlName="requestAs">
+                                  <mat-option [value]="employeeRoleArray" *ngFor="let employeeRoleArray of EmployeeRoleArray">{{employeeRoleArray}}
+                                  </mat-option>
+                                </mat-select>
+                                <mat-error *ngIf="handleError('requestAs', 'required')">
+                                  You must Fill this field!
+                                </mat-error>
+                              </mat-form-field>
+    
+            <br>
+               <button class="pull-right" mat-raised-button color="primary" type="submit" [disabled]="requestsForm.invalid">Submit</button>
+    
+                           
+            </form>
+        </div>
+    
+                           
+        </div>
+            </div>
+            </div>
+        </div>
+    
+    
+    
+    </div>
+    
+    
+    </mat-card>
+      </div>

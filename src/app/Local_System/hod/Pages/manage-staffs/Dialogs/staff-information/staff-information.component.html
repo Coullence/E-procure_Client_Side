@@ -1,0 +1,111 @@
+<mat-card class="content">
+	<div class="title-group">
+		<h3 class="mat-h1">
+			<a routerLink="/Admin">Dashboard > </a>
+			<a routerLink="/Admin//managestaffs">Manage Staffs > </a>
+			<strong> Staff Data</strong>
+
+		</h3>
+		<mat-divider></mat-divider>
+	</div>
+
+	<div class="formSection">
+		<!---->
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12 col-sm-12 supplierData">
+					<div class="row">
+						<div class="col-md-7">
+							<h2>Staff Details</h2>
+						</div>
+						<div class="col-md-5">
+
+						</div>
+					</div>
+
+
+					<div class="row">
+						<div class="col-md-4 col-sm-12">
+							<div class="supData">
+								<h4>Staff Name</h4>
+								<p>{{firstName}} &nbsp; {{lastName}}</p>
+							</div>
+
+							<div class="supData">
+								<h4>Staff Email</h4>
+								<p>{{email}}</p>
+							</div>
+
+							<div class="supData">
+								<h4>Staff Phone</h4>
+								<p>{{phone}}</p>
+							</div>
+
+							<div class="supData">
+								<h4>National Id</h4>
+								<p>{{National_Id}}</p>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-12">
+							<div class="supData">
+								<h4>Job Group</h4>
+								<p>{{jobGroup}}</p>
+							</div>
+							<div class="supData">
+								<h4>Job Group</h4>
+								<p>{{jobGroup}}</p>
+							</div>
+
+							<div class="supData">
+								<h4>Job ID</h4>
+								<p>{{jobId}}</p>
+							</div>
+
+							<div class="supData">
+								<h4>Registered On</h4>
+								<p>{{createdAt}}</p>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-12">
+
+							<div class="supData">
+								<h4>Request As</h4>
+								<p> <span class="yellow">{{requestAs}}</span> </p>
+							</div>
+
+							<div class="supData">
+								<h4>Requested On</h4>
+								<p>{{createdAt}}</p>
+							</div>
+
+							<div class="supData">
+								<h4>Updated on</h4>
+								<p>{{updatedAt}}</p>
+							</div>
+							<br>
+							<div class=" mat-elevation-z10 ">
+
+
+								<button mat-raised-button color="accent" type="submit"
+									(click)="rejectRequest()">
+									
+								Reject</button>
+
+								<button mat-raised-button color="primary" type="submit" (click)="approveUser()">
+									<span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+									Approve</button>
+
+
+								<button mat-raised-button color="warn" type="submit"
+									(click)="revokeUser()">Revoke</button>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+</mat-card>

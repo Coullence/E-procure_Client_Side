@@ -1,0 +1,165 @@
+<!-- Title group  -->
+<mat-card>
+    <div class="title-group">
+        <h3 class="mat-h1">
+        <a routerLink="/Staff">Dashboard > </a>
+         <strong>Make Requests</strong> 
+       </h3>
+        <mat-divider></mat-divider>
+    </div>
+      
+    <div   >
+    
+    
+       <div class="formSection">
+              <!---->
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-7 col-sm-12 supplierData mat-elevation-z8"> 
+                    <div class="row">
+                      <div class="col-md-7">
+                         <h2>Your Account Details</h2>
+                      </div>
+                      <div class="col-md-5">
+      
+                         <div class="pull-right">
+      
+              <button mat-raised-button color="default" (click)="updateAccount()" >
+                <mat-icon>person_outline</mat-icon>
+                <span>Update</span>
+              </button>
+      
+      
+                         </div>
+      
+                      </div>
+                    </div>
+      
+                  <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="supData">
+                        <h4>First Name</h4>
+                        <p>{{firstName}}</p>
+                        </div>
+      
+                        <div class="supData">
+                        <h4>Phone</h4>
+                        <p>{{phone}}</p>
+                        </div>
+      
+                        <div class="supData">
+                        <h4>Job Group</h4>
+                        <p>{{jobGroup}}}</p>
+                        </div>
+      
+                        <div class="supData">
+                        <h4>Registered On</h4>
+                        <p>{{createdAt}}}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+      
+                        <div class="supData">
+                        <h4>Last Name</h4>
+                        <p>{{lastName}}</p>
+                        </div>
+      
+                        <div class="supData">
+                          <h4>Your Email</h4>
+                          <p>{{email}}</p>
+                          </div>
+      
+                        <div class="supData">
+                        <h4>Job Id</h4>
+                        <p>{{jobId}}}</p>
+                        </div>
+      
+                        <div class="supData">
+                        <h4>Updated On</h4>
+                        <p>{{updatedAt}}}</p>
+                        </div>
+                    </div>
+                  </div> 
+      
+                  </div>
+      
+                  <div class="col-md-5 col-sm-12">
+                    <div class="row form">
+                
+              <form [formGroup]="formData" (ngSubmit)="submitData()" #resetRequestsForm="ngForm" novalidate>
+      
+                        <h2>Fill in your <strong>Correct</strong> details here.</h2>
+
+
+
+                                <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Items" formControlName="itemName">
+                                    <mat-error *ngIf="handleError('itemName', 'required')">
+                                    You must provide your <strong> Items</strong>
+                                    </mat-error>
+                                </mat-form-field>
+                        
+                                 <mat-form-field>
+                                  <mat-label>Item Category</mat-label>
+                                  <mat-select  formControlName="itemCategory">
+                                    <mat-option [value]="itemCategoryArray.categoryName" *ngFor="let itemCategoryArray of ItemCategoryArray">{{itemCategoryArray.categoryName}}
+                                    </mat-option>
+                                  </mat-select>
+                                  <mat-error *ngIf="handleError('itemCategory', 'required')">
+                                  PLease, <strong>Item Category</strong>  is required
+                                  </mat-error>
+                                </mat-form-field>
+      
+                            
+      
+      
+                                <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="Item Quantity" formControlName="itemQuantity">
+                                  <mat-error *ngIf="handleError('itemQuantity', 'required')">
+                                    You must provide <strong>Quantity!</strong>
+                                  </mat-error>
+                                </mat-form-field>
+      
+      
+                                <mat-form-field class="example-full-width">
+                                  <input type="number"  matInput placeholder="Quotation per unit" formControlName="vendorQuotation">
+                                  <mat-error *ngIf="handleError('vendorQuotation', 'required')">
+                                    You must provide <strong>Quotation!</strong>
+                                  </mat-error>
+                                </mat-form-field>
+                                
+      
+              <br>
+                    <button class="pull-right" mat-raised-button color="primary" type="submit" [disabled]="formData.invalid">
+                      
+                      <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Submit</button>
+      
+    
+                    <br>
+                    <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+                    <br>
+                             
+              </form>
+          </div>
+    
+          
+              <div class="row coution">
+                <h4>Note!</h4>
+                <p>While submiting for your request, <strong>Ensure</strong> You submit the correct details becouse all data will undergo screening and extreme analysis before accepting your applications.Please refer to our policy for more information.
+                </p>
+              </div>
+      
+                             
+          </div>
+              </div>
+              </div>
+          </div>
+    
+    
+    
+    </div>
+    
+    
+    </mat-card>
+      

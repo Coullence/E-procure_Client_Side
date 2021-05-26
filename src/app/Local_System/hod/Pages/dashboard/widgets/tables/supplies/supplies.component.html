@@ -1,0 +1,15 @@
+
+<h1>All Supplies</h1>
+<flx-ui-datatable
+[headers]="['Full Name','Job Group','Role','Job Status']"
+[dataKeys]="['fullName','jobGroup','role','jobStatus']"
+[dataSrcKey]="'msg'"
+[limit]="5"
+spinnerSrc="'Your ajax loader gif"
+[enableDataExports]="true"
+[dataExportsConfig]="{exportsTo:['print','word','excel','pdf'],title:'Export data',dataColumns:['fullName','email','phone','jobGroup','role','regDate','jobStatus']}"
+[classes]="{addButton:'btn btn-primary'}"
+searchPlaceholder="Enter description, fullname, or mobile to search"
+[dataUrl]="'http://localhost:3000/read/readEmployee'">
+</flx-ui-datatable>
+<a routerLink="/Admin/managesupplies">Readmore...</a>

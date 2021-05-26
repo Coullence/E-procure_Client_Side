@@ -1,0 +1,19 @@
+
+<mat-card> 
+    All open orders
+    <flx-ui-datatable
+    [headers]="['Full Name','Email','Phone','Job Group','Role','Reg Date','Job Status']"
+    [dataKeys]="['fullName','email','phone','jobGroup','role','regDate','jobStatus']"
+    [dataSrcKey]="'msg'"
+    [limit]="10"
+    [hasAddButton]="true"
+    [hasActionButtons]="true"
+    spinnerSrc="'Your ajax loader gif"
+    [enableDataExports]="true"
+    [dataExportsConfig]="{exportsTo:['print','word','excel','pdf'],title:'Export data',dataColumns:['fullName','email','phone','jobGroup','role','regDate','jobStatus']}"
+    [classes]="{addButton:'btn btn-primary'}"
+    searchPlaceholder="Enter description, fullname, or mobile to search"
+    [actionButtons]="[{text:'',tooltip:'View info',tooltipPosition:'right',icon:'fa fa-edit',class:'btn-default'},{text:'',tooltip:'Edit info',tooltipPosition:'botom',icon:'fa fa-eye',class:'btn-secondary'},{text:'',tooltip:'Delete item',tooltipPosition:'left',icon:'fa fa-trash',iconPosition:'right',class:'btn-danger'}]"
+    [dataUrl]="'http://localhost:3000/read/readEmployee'"></flx-ui-datatable>
+    
+    </mat-card>

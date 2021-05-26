@@ -1,0 +1,18 @@
+mat-card{
+  padding: 5px !important;
+  margin: 5px !important;
+  height: 98% !important;
+  width: 89% !important;
+  margin-bottom: 5px !important;
+}
+  
+  .table-head{
+    background-color: white;
+  }
+  .table-head button{
+    float: left;
+  }
+  .table-head mat-form-field {
+    float: right;
+    width: 20%;
+  }

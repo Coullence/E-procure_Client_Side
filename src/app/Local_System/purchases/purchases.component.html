@@ -1,0 +1,25 @@
+<!--Header-->
+<app-header></app-header>
+
+<mat-drawer-container>
+  <!--sidenav-->
+  <mat-drawer mode="side" opened color="primary">
+
+    <app-sidenav></app-sidenav>
+
+  </mat-drawer>
+  <!--content-->
+  <mat-drawer-content>
+
+
+    <router-outlet>
+      <!--Loader-->
+      <div *ngIf="showLoadingIndicator">Loading data...</div>
+    </router-outlet>
+
+
+
+  </mat-drawer-content>
+
+</mat-drawer-container>
+<app-footer></app-footer>

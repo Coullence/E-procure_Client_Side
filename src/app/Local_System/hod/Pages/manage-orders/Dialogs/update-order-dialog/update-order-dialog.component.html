@@ -1,0 +1,88 @@
+<!-- Title group  -->
+<mat-card class="content" >
+<div class="title-group">
+    <h3 class="mat-h1">
+    <a routerLink="/hod">Dashboard > </a>
+    <a routerLink="/hod/manageorders">Manage Orders > </a>
+     <strong>Update Order</strong>
+     </h3>
+    <mat-divider></mat-divider>
+</div>
+  
+<mat-card class="form mat-elevation-z8">
+  <h1 >Update Employee</h1>
+
+
+  <!-- Form -->
+  <div class="inner-wrapper">
+    <form [formGroup]="orderForm" (ngSubmit)="updateOrderForm()" #resetOrderForm="ngForm" novalidate>
+      <!-- Left block -->
+   
+           <!-- Name -->
+           <mat-form-field class="example-full-width">
+              <input matInput placeholder="Order Name" formControlName="orderName">
+              <mat-error *ngIf="handleError('orderName', 'required')">
+                You must provide a<strong>Order Name</strong>
+              </mat-error>
+            </mat-form-field>
+           
+                <!-- Prod Quantity -->
+           <mat-form-field class="example-full-width">
+              <input matInput placeholder="Product Quantity" formControlName="prodQuantity">
+              <mat-error *ngIf="handleError('prodQuantity', 'required')">
+                You must provide a<strong>Product Quantity</strong>
+              </mat-error>
+            </mat-form-field>
+           
+                <!-- Prod Supplier -->
+           <mat-form-field class="example-full-width">
+              <input matInput placeholder="Product Supplier" formControlName="prodSupplier">
+              <mat-error *ngIf="handleError('prodSupplier', 'required')">
+                You must provide a<strong>Product Supplier</strong>
+              </mat-error>
+            </mat-form-field>
+
+
+                <!-- Email -->
+             <mat-form-field class="example-full-width">
+              <input matInput placeholder="Supplier Email" formControlName="supplierEmail">
+              <mat-error *ngIf="handleError('supplierEmail', 'required')">
+                You must provide a<strong>Supplier email</strong>
+              </mat-error>
+            </mat-form-field>
+
+             
+                <!-- Expected Date -->
+           <mat-form-field class="example-full-width">
+              <input matInput placeholder="Deleivery Expected" formControlName="expectedDate">
+              <mat-error *ngIf="handleError('expectedDate', 'required')">
+                You must provide a<strong>Expected Date</strong>
+              </mat-error>
+            </mat-form-field>
+
+        
+                <!-- Role -->
+        
+                <!-- Section -->
+  
+                <!-- Email -->
+
+  
+  
+      <!-- Submit & Reset -->
+     
+        <div class="full-wrapper button-wrapper">
+          
+          <div class="button-row">
+            <button mat-raised-button color="primary" type="submit"
+                [disabled]="orderForm.invalid">Submit</button>
+            <button mat-raised-button color="warn" class="pull-right" (click)="closeUpdate()" >Cancel</button>
+        </div>
+        </div>
+   
+    </form>
+  </div>
+
+</mat-card>
+
+</mat-card>

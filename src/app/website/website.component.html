@@ -1,0 +1,122 @@
+<mat-toolbar class="" color="primary">
+
+    <span>Procurement Logo</span>
+  
+    <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
+      <form class="example-form">
+  
+        <mat-form-field appearance="standard">
+          <mat-label>Search Anything...</mat-label>
+          <input matInput placeholder="Start typing...">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint>Need Help? Ask me.</mat-hint>
+        </mat-form-field>
+  
+  
+      </form>
+    </div>
+  
+  
+    <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
+  
+  
+  
+  
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+  
+       
+        <a routerLink="/Auth/login"> <button mat-menu-item>
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Login</span>
+          </button></a>
+
+          <a routerLink="Auth/Sign_Up"> <button mat-menu-item>
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Register</span>
+          </button></a>
+  
+        </mat-menu>
+    </div>
+  
+    <mat-icon>help_outline</mat-icon>
+  
+  
+  
+  
+  
+  </mat-toolbar>
+
+  <div class="container-fluid">
+      <div class="row">
+          <div class="header">
+
+          </div>
+      </div>
+  </div>
+  <div class="container-fluid">
+      <div class="row">
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+            <mat-card fxFlex="80">
+                This is an online portal where you can submit your queries. Our system hod will check a look at your request veryfy it an dthen gives you a good responce in
+                a very view minutes.Typically the procedures is straightbforward as follows:
+                <ul>
+                    <li>Fill in your respective details</li>
+                    <li>Ensure all the submited details are correct.</li>
+                    <li>Check on the number of items you want and type </li>
+                    <li>Submit your details.</li>
+                </ul>
+                The table given bellow allows you to interact with your requests. This will give you an opportunity to see and check which request you have 
+                    keep track of request performance and afterwards verify in the producst has been deleivered to your office. follows typical process as follows;
+                    <ul>
+                        <li>You can view table data in the table.</li>
+                        <li>You can view single request in the table by clicking view button</li>
+                        <li>You can edit the requested data in the table</li>
+                        <li>You can Delete a requested item in the table.</li>
+                    </ul>
+               
+                
+            </mat-card>
+           
+            <mat-card fxFlex="50" class="noticeboard">
+                <div class="card-header">
+                    
+                <h1><span>NOTE</span></h1>
+
+                </div>
+
+                <mat-card *ngFor="let tender of tendersData" >
+                  <div class="row">
+                    <div class="col-md-8 col-sm-12">
+                  <h3><strong>Tender Name</strong>: 
+                  {{ tender.itemName }}</h3>
+                  <h6><strong>Category</strong>: ICT Assets</h6>
+
+                    <div class="pull-left">
+                      <small><strong>Posted On:</strong>date</small>
+                    </div>
+
+
+                      <div class="pull-right">
+                        <small><strong>Updated ON:</strong> date</small>
+                      </div>
+
+                </div>
+              </div>
+
+                </mat-card>
+
+               
+               
+
+
+
+            </mat-card>
+        
+        </div>
+       
+      </div>
+      </div>
+  

@@ -1,0 +1,104 @@
+
+<mat-card class="content">
+<div class="title-group">
+    <h3 class="mat-h1">
+    <a routerLink="/hod">Dashboard > </a>
+    <a routerLink="/hod//manageemployees">Manage Employees > </a>
+    <strong> Update Employee</strong>
+      
+    </h3>
+    <mat-divider></mat-divider>
+</div>
+  
+ <div class="formSection">
+        <!---->
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 supplierData"> 
+              <div class="row">
+                <div class="col-md-7">
+                   <h2>Employee Details</h2>
+                </div>
+                <div class="col-md-5"> 
+
+                </div>
+              </div>
+
+            <div class="row">
+              <div class="col-md-4 col-sm-12">
+                  <div class="supData">
+                  <h4>Employee Name</h4>
+                  <p>{{employeeName}}</p>
+                  </div>
+
+                  <div class="supData">
+                  <h4>Employee Email</h4>
+                  <p>{{employeeEmail}}</p>
+                  </div>
+
+                  <div class="supData">
+                  <h4>Employee Phone</h4>
+                  <p>{{employeePhone}}</p>
+                  </div>
+
+                  <div class="supData">
+                  <h4>Alternate Phone</h4>
+                  <p>{{employeeAltPhone}}</p>
+                  </div>
+              </div>
+              <div class="col-md-4 col-sm-12">
+                  <div class="supData">
+                  <h4>Nationsl ID</h4>
+                  <p>{{National_Id}}</p>
+                  </div>
+
+                  <div class="supData">
+                  <h4>KRA PIN</h4>
+                  <p>{{KRA_Pin}}</p>
+                  </div>
+
+                  <div class="supData">
+                  <h4>Job ID</h4>
+                  <p>{{jobId}}</p>
+                  </div>
+
+                  <div class="supData">
+                  <h4>Job Group</h4>
+                  <p>{{jobGroup}}</p>
+                  </div>
+              </div>
+              <div class="col-md-4 col-sm-12">
+
+                  <div class="supData">
+                  <h4>Request As</h4>
+                  <p> <span class="yellow">{{requestAs}}</span> </p>
+                  </div>
+
+                  <div class="supData">
+                  <h4>Requested On</h4>
+                  <p>{{requestOn}}</p>
+                  </div>
+
+                  <div class="supData">
+                  <h4>Update Reques on</h4>
+                  <p>{{updateOn}}</p>
+                  </div>
+                  <br>
+       <div class=" mat-elevation-z22 ">  
+           <button  mat-raised-button color="accent" type="submit" (click)="rejectRequest()" >Reject</button>
+           
+           <button  mat-raised-button color="primary" type="submit" (click)="updateUser()" >Approve</button> 
+
+           <button  mat-raised-button color="warn" type="submit" >Revoke</button>           
+    </div>
+
+              </div>
+            </div> 
+
+            </div>
+
+        </div>
+        </div>
+    </div>
+</mat-card>
+  

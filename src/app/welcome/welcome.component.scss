@@ -1,0 +1,21 @@
+
+.body{
+  height: 100% !important;
+  width: 100% !important;
+    overflow: scroll;
+    background-color: white;
+}
+
+.content{
+	width: 100% !important;
+	margin: 0px !important;
+    background-image: url('../../assets/Images/bg2.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.footer{
+	height: 60% !important;
+	width: 100% !important;
+	background-color: black;
+}

@@ -1,0 +1,234 @@
+<!-- Title group  -->
+<div class="">
+    <mat-card>
+    <div class="title-group">
+        <h3 class="mat-h1">
+         <strong>Register Now</strong> 
+       </h3>
+        <mat-divider></mat-divider>
+    </div>
+    <div class="container">
+        <div class="row">
+    <div class="col-md-6 col-sm-12 col-xs-12 mt-5">
+    
+        <div class="loginImage">
+        <img src="../../../../assets/Images/loginImage.png" class="
+        img-responsive">
+      </div><!--end of header-->
+        <div class="infoSection">
+        Remember all logins credentials attempts are recorded for security scanning, analysis and intepretation.Any form of physing, 
+                hacking shall be recorded and you may be subjected to law.<br>
+                Avoid Trials
+                <br>
+                Regards <strong>Procurement Group</strong>
+            
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-12 col-xs-12 mt-5 ">
+        
+        <div class="card mat-elevation-z8">
+        <span *ngIf="loading" ><mat-progress-bar mode="indeterminate"></mat-progress-bar></span>
+            
+            <div class="card-header">
+                <div class="">
+                    <span><h1>Sign Up</h1></span>
+                  </div>
+    
+            </div>
+
+ 
+
+            <div class="card-body">
+                <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+
+                    <div class="row">
+
+                        <div class="col-md-6 col-sm-12">
+
+                    <div class="form-group">
+
+                    <label for="username">First Name</label>
+                        <input type="text" placeholder="Enter Your First Name" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                            <div *ngIf="f.firstName.errors.required">First is required</div>
+                        </div>
+                    </div>
+                        </div>
+
+
+                        <div class="col-md-6 col-sm-12">
+                            
+                    <div class="form-group">
+
+                    <label for="username">Last Name</label>
+                        <input type="text" placeholder="Enter Your Last Name" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                            <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+
+                        <div class="col-md-6 col-sm-12">
+
+                    <div class="form-group">
+
+                    <label for="username">Email</label>
+                        <input type="email" placeholder="Enter Your Email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div *ngIf="f.email.errors.required">Email is required</div>
+                        </div>
+                    </div>
+                        </div>
+
+
+                        <div class="col-md-6 col-sm-12">
+                            
+                    <div class="form-group">
+
+                    <label for="username">Phone</label>
+                        <input type="number" placeholder="Enter Your Phone" formControlName="phone" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+                        <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                            <div *ngIf="f.phone.errors.required">Phone is required</div>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+
+                        <div class="col-md-6 col-sm-12">
+
+                    <div class="form-group">
+
+                    <label for="username">National Id</label>
+                        <input type="number" placeholder="Enter Your National Id" formControlName="National_Id" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.National_Id.errors }" />
+                        <div *ngIf="submitted && f.National_Id.errors" class="invalid-feedback">
+                            <div *ngIf="f.National_Id.errors.required">National Id is required</div>
+                        </div>
+                    </div>
+                        </div>
+
+
+                        <div class="col-md-6 col-sm-12">
+                            
+                    <div class="form-group">
+
+                    <label for="username">Job Group</label>
+
+                    <mat-select class="form-control"  placeholder="Job Group" formControlName="jobGroup">
+                        <mat-option [value]="jobGroupArray" *ngFor="let jobGroupArray of JobGroupArray">{{jobGroupArray}}
+                        </mat-option>
+                      </mat-select>
+
+                         
+
+
+                <div *ngIf="submitted && f.requestAs.errors" class="invalid-feedback">
+                    <div *ngIf="f.requestAs.errors.required">You must fill this</div>
+                </div>
+                    </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+
+                        <div class="col-md-6 col-sm-12">
+
+                    <div class="form-group">
+
+                    <label for="username">Job Id</label>
+                        <input type="text" placeholder="Enter Your Job Id" formControlName="jobId" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.jobId.errors }" />
+                        <div *ngIf="submitted && f.jobId.errors" class="invalid-feedback">
+                            <div *ngIf="f.jobId.errors.required">Job Id is required</div>
+                        </div>
+                    </div>
+                        </div>
+
+
+                        <div class="col-md-6 col-sm-12">
+                            
+                  
+
+
+
+                    <div class="form-group">
+
+                    <label for="username">Request AS</label>
+                              <mat-select class="form-control"  placeholder="Request As:" formControlName="requestAs">
+                                <mat-option [value]="requestAsArray" *ngFor="let requestAsArray of RequestAsArray">{{requestAsArray}}
+                                </mat-option>
+                              </mat-select>
+
+                                 
+
+
+                        <div *ngIf="submitted && f.requestAs.errors" class="invalid-feedback">
+                            <div *ngIf="f.requestAs.errors.required">You must fill this</div>
+                        </div>
+
+
+                    </div>
+
+
+
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-6 col-sm-12">
+
+                    <div class="form-group">
+
+                    <label for="username">Password</label>
+                        <input type="password" placeholder="Enter Password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                            <div *ngIf="f.password.errors.required">Password is required</div>
+                        </div>
+                    </div>
+
+
+              
+
+                        </div>
+
+
+                        <div class="col-md-6 col-sm-12">
+                            
+                    <div class="form-group">
+
+                    <label for="username">Confirm Password</label>
+                        <input type="password" placeholder="Confirm Password:" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
+                        <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+                            <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+                  
+                    <button [disabled]="loading" class="btn btn-primary">
+                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                        Sign Up
+                    </button>
+                    <br>
+                    <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+                    <br>
+                    <a class="pull-left" routerLink="/Auth/Reset_Password">Forgot  Password?</a>
+                    <a class="pull-right" routerLink="/Auth/login">Already signed up? Sign in here</a>
+                </form>
+            </div>
+            
+            
+        </div>
+    </div>
+    </div>
+    </div>
+    </mat-card>
+      </div>

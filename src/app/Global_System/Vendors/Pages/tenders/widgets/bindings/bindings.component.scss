@@ -1,0 +1,23 @@
+mat-card{
+    margin: 5px;
+  }
+  ng-container{
+    margin: 10px;
+  }
+  table{
+    width: 100%;
+    padding: 10px;
+  }
+  button{
+    margin: 5px;
+  }
+  .table-head{
+    background-color: white;
+  }
+  .table-head button{
+    float: left;
+  }
+  .table-head mat-form-field {
+    float: right;
+    width: 20%;
+  }

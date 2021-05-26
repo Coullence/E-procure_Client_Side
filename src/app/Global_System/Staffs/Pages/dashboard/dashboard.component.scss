@@ -1,0 +1,31 @@
+mat-card{
+  padding: 5px !important;
+  margin: 5px !important;
+  height: 97% !important;
+  width: 90% !important;
+  margin-bottom: 5px !important;
+}
+.stats-cards  mat-card{
+  background-image: url(../../../../../assets/Images/Orders.png);
+  background-repeat: no-repeat;
+  height: 120px;
+  width: 100%;
+  font-weight: 500;
+}
+.stats-cards a {
+  font-size: 60px;
+  font-weight: 800;
+  font-family: 'Times New Roman', Times, serif;
+  margin: auto;
+  margin-left: 30%;
+  margin-top: 50%;
+}
+.table{
+     height: 75%;
+}
+  h3{
+    font-family: Aerial;
+    font-size: 12px;
+    color: green;
+}
+

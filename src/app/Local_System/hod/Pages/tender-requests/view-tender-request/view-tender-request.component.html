@@ -1,0 +1,145 @@
+<!-- Title group  -->
+<mat-card>
+    <div class="title-group">
+        <h3 class="mat-h1">
+        <a routerLink="/staffs">Dashboard > </a>
+         <strong>Updated Requests</strong> 
+       </h3>
+        <mat-divider></mat-divider>
+    </div>
+      
+    <div   >
+    
+    
+       <div class="formSection">
+              <!---->
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-7 col-sm-12 supplierData mat-elevation-z8"> 
+                    <div class="row">
+                      <div class="col-md-7">
+                         <h2>Vendor Details</h2>
+                      </div>
+                      <div class="col-md-5">
+      
+                        
+      
+                      </div>
+                    </div>
+      
+                  <div class="row">
+                    <div class="col-md-6 col-sm-12">
+    
+    
+                        <div class="supData">
+                        <h4>First Name</h4>
+                        <p>{{firstName}}</p>
+                        </div>
+      
+                        <div class="supData">
+                        <h4>Phone</h4>
+                        <p>{{phone}}</p>
+                        </div>
+      
+                        <div class="supData">
+                        <h4>Job Group</h4>
+                        <p>{{jobGroup}}</p>
+                        </div>
+    
+                        <div class="supData">
+                        <h4>Job Id</h4>
+                        <p>{{jobId}}</p>
+                        </div>
+      
+                        <div class="supData">
+                        <h4>Registered On</h4>
+                        <p>{{createdAt}}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+      
+                        <div class="supData">
+                        <h4>Last Name</h4>
+                        <p>{{lastName}}</p>
+                        </div>
+      
+                        <div class="supData">
+                          <h4>Your Email</h4>
+                          <p>{{email}}</p>
+                          </div>
+      
+                        <div class="supData">
+                        <h4>National Id</h4>
+                        <p>{{National_Id}}</p>
+                        </div>
+                        <div class="supData">
+                        <h4>Role</h4>
+                        <p>{{role}}</p>
+                        </div>
+      
+                        <div class="supData">
+                        <h4>Updated On</h4>
+                        <p>{{updatedAt}}</p>
+                        </div>
+                    </div>
+                  </div> 
+      
+                  </div>
+      
+                  <div class="col-md-5 requestDetails col-sm-12">
+                    <br>
+    
+                           <div class="row">
+                      <div class="col-md-7">
+                         <h2>Request Details</h2>
+                      </div>
+                      <div class="col-md-5">
+      
+                        
+      
+                      </div>
+                    </div>
+
+
+    
+                        <div class="reqData">
+                        <h4>Request Category</h4>
+                        <p>{{itemCategory}}</p>
+                        </div>
+      
+                        <div class="reqData">
+                        <h4>Item Name</h4>
+                        <p>{{itemName}}</p>
+                        </div>
+      
+                        <div class="reqData">
+                        <h4>Items Quantity</h4>
+                        <p>{{itemQuantity}}</p>
+                        </div>
+
+                        <div class="reqData">
+                            <h4>Quotation</h4>
+                            <p>{{vendorQuotation}}</p>
+                            </div>
+                        <br>
+    <div class="row pull-right">
+             <div class=" mat-elevation-z10  ">                     
+               <button  mat-raised-button color="warn" type="submit" (click)="reject()" >Reject</button>
+               <button  mat-raised-button color="primary" type="submit" (click)="approveUser()">Approve</button> 
+               <button  mat-raised-button color="warn" type="submit"(click)="revoke()">Revoke</button>           
+        </div>
+    </div>
+                    
+                               
+                   </div>
+              </div>
+              </div>
+          </div>
+    
+    
+    
+    </div>
+    
+    
+    </mat-card>
+      

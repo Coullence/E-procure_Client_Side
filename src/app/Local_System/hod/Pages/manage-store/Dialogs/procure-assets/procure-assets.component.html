@@ -1,0 +1,79 @@
+<!-- Title group  -->
+<mat-card>
+<div class="title-group">
+    <h3 class="mat-h1">
+    <a routerLink="/Admin">Dashboard > </a>
+    <a routerLink="/Admin/managestore">Manage Store > </a>
+    <a routerLink="/Admin/manage_categories">Manage Categories > </a>
+     <strong>Procure more Items</strong> 
+    </h3>
+    <mat-divider></mat-divider>
+</div>
+  
+  
+  <p *ngIf="categories.length <= 0" class="no-data">There is no New users yet added yet!</p>
+  
+  <div class="container-fluid" *ngIf="categories.length > 0">
+
+            <div class="row">
+
+          <div class="col-md-12 col-sm-12">
+
+        <mat-card class="formSection mat-elevation-z8" fxFlex="100">
+
+        <!---->
+        <form [formGroup]="myForm" (ngSubmit)="submitRequestsForm()" #resetRequestsForm="ngForm" novalidate>
+        	<h4>Update Category Name</h4>
+<div class="row">
+        	   <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Quantity" formControlName="categoryName">
+                            <mat-error *ngIf="handleError('categoryName', 'required')">
+                              You must provide<strong>Category Name!</strong>
+                            </mat-error>
+                 </mat-form-field>
+
+
+
+
+
+        	   <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Additional Requirements" formControlName="categoryName">
+                            <mat-error *ngIf="handleError('categoryName', 'required')">
+                              You must provide<strong>Category Name!</strong>
+                            </mat-error>
+                 </mat-form-field>
+
+
+        	   <mat-form-field class="example-full-width">
+
+<input matInput [matDatepicker]="myDatePicker" [matDatepickerFilter]="dateFilter" [min]="minDate">
+<mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
+<mat-datepicker #myDatePicker></mat-datepicker>
+
+                 </mat-form-field>
+
+             </div>
+
+                          
+                        <div class="button-row">
+                            <button mat-raised-button color="primary" type="submit"
+                                [disabled]="myForm.invalid">
+                                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                              Submit</button>
+
+        				<a routerLink="/Admin/manage_categories">
+                            <button mat-raised-button color="warn" >Cancel</button>
+                        </a>
+                        </div>
+
+
+        </form>
+    </mat-card>
+
+
+        </div>
+    <!-- Table ending -->
+  </div>
+</div>
+</mat-card>
+  

@@ -1,0 +1,67 @@
+<!-- Title group  -->
+    <h1>All Open Tenders</h1>
+
+  
+  <p *ngIf="TenderData.length <= 0" class="no-data">There is no Tenders added yet!</p>
+  
+  <div class="container-fluid" *ngIf="TenderData.length > 0">
+    <div class="mat-elevation-z8">
+      <div class="table-head">
+      
+        <mat-form-field class="search-form-field" floatLabel="never">
+          
+          <input matInput [(ngModel)]="searchKey" placeholder="Search? Start Typing..." autocomplete="off" (keyup)="applyFilter()">
+          <button mat-button matSuffix mat-icon-button aria-label="Clear"*ngIf="searchKey"  (click)="onSearchClear()">
+            <mat-icon>close</mat-icon>
+          </button>
+          
+        </mat-form-field>
+        
+      <table mat-table [dataSource]="dataSource">
+        
+  
+        <ng-container matColumnDef="batchNO">
+          <th mat-header-cell *matHeaderCellDef> Batch NO </th>
+          <td mat-cell *matCellDef="let element"> <div id="batchNO"> {{element.batchNO}} </div></td>
+        </ng-container>
+        <ng-container matColumnDef="tenderCategory">
+            <th mat-header-cell *matHeaderCellDef> Tender Category</th>
+            <td mat-cell *matCellDef="let element"> {{element.tenderCategory}} </td>
+          </ng-container>
+          <ng-container matColumnDef="resourceQuantity">
+            <th mat-header-cell *matHeaderCellDef> Resource Quantity </th>
+            <td mat-cell *matCellDef="let element"> {{element.resourceQuantity}} </td>
+          </ng-container>
+          <ng-container matColumnDef="resourceCondition">
+            <th mat-header-cell *matHeaderCellDef> Resource Condition</th>
+            <td mat-cell *matCellDef="let element"> {{element.resourceCondition}} </td>
+          </ng-container>
+          <ng-container  matColumnDef="tenderStatus">
+            <th mat-header-cell *matHeaderCellDef> Tender Status </th>
+            <td mat-cell *matCellDef="let element" > <b> {{element.tenderStatus}} </b></td>
+          </ng-container>
+          <ng-container matColumnDef="postDate">
+            <th mat-header-cell *matHeaderCellDef>Post Date </th>
+            <td mat-cell *matCellDef="let element"> {{element.postDate}} </td>
+          </ng-container>
+          <ng-container matColumnDef="expiryDate">
+            <th mat-header-cell *matHeaderCellDef> Expiry Date </th>
+            <td mat-cell *matCellDef="let element"> {{element.expiryDate}} </td>
+          </ng-container>
+  
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef> Action </th>
+          <td mat-cell *matCellDef="let element; let i = index;">
+            <button mat-raised-button color="primary" class="push-right"
+            [routerLink]="['/vendor/BindTender/', element._id]"><mat-icon>launch</mat-icon> Bind</button>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+  
+      <mat-paginator [pageSizeOptions]="[10, 20, 30, 40, 50, 100]" showFirstLastButtons></mat-paginator>
+    </div>
+  </div>
+  

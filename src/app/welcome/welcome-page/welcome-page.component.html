@@ -1,0 +1,88 @@
+
+	<div class="body">
+
+  
+	<div class="row header gaps-10">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-sm-12">
+					
+				    <div class="welcomeImg">
+				    <img src="../../../assets/Images/loginImage.png" class="img img-responsive">
+				  </div>
+				</div>
+				<div class="col-md-6 col-sm-12">
+					<h1>Hey welcome</h1> 
+				</div>
+			</div>
+		</div>
+	</div>
+  <div class="request">
+  	<div class="container-fluid">
+  		<div class="row request">
+			<mat-card fxFlex="50" class="noticeboard">
+                <div class="card-header">
+                    
+                <h1><span>NOTE</span></h1>
+
+                </div>
+
+                <mat-card  *ngFor="let tender of tendersData" >
+                  <div class="row mat-elevation-z8">
+                    <div class="col-md-8 col-sm-12">
+                  <h3><strong>Tender Name</strong>: 
+                  {{ tender.itemName }}</h3>
+                  <h6><strong>Category</strong>: ICT Assets</h6>
+
+                    <div class="pull-left">
+                      <small><strong>Posted On:</strong>date</small>
+                    </div>
+
+
+                      <div class="pull-right">
+                        <small><strong>Updated ON:</strong> date</small>
+                      </div>
+
+                </div>
+              </div>
+
+                </mat-card>
+
+               
+               
+
+
+
+            </mat-card>
+		<!-- <div class="col-md-4 col-sm-12">
+			<mat-card class="mat-elevation-z8">
+				<h1>Register as a Staff</h1>
+				<p>Registering as a  staff Registering as a  staff Registering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staff</p>
+			<a mat-list-item routerLinkActive="list-item-active" routerLink="/welcome/RequestasStaff"><button mat-raised-button color="primary" type="submit"
+       >As a Staff</button></a>
+				
+			</mat-card>
+		</div>
+		<div class="col-md-4 col-sm-12">
+			<mat-card class="mat-elevation-z8">
+				<h1>Register as a Employee</h1>
+				<p>Registering as a  staff Registering as a  staff Registering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staff</p>
+       <a mat-list-item routerLinkActive="list-item-active" routerLink="/welcome/RequestasEmployee"> <button mat-raised-button color="primary" type="submit"
+      >As an Employee</button></a>
+				
+			</mat-card>
+		</div>
+		<div class="col-md-4 col-sm-12">
+			<mat-card class="mat-elevation-z8">
+				<h1>Register as a Staff</h1>
+				<p>Registering as a  staff Registering as a  staff Registering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staffRegistering as a  staff</p>
+       <a mat-list-item routerLinkActive="list-item-active" routerLink="/welcome/RequestasSupplier"> <button mat-raised-button color="primary" type="submit"
+      >As a Supplier</button></a>
+				
+			</mat-card>
+		</div>  -->
+		</div> 
+	</div>
+</div>
+
+</div>

@@ -1,0 +1,45 @@
+
+<div class="title-group">
+    <h3 class="mat-h1">
+     <strong>Register Now</strong> 
+   </h3>
+    <mat-divider></mat-divider>
+</div>
+  
+<div>
+
+    <mat-card class="formSection mat-elevation-z8" fxFlex="80">
+        <!---->
+        <form [formGroup]="myForm" (ngSubmit)="submitRequestsForm()" #resetRequestsForm="ngForm" novalidate>
+
+                          <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Enter Category" formControlName="categoryName">
+                            <mat-error *ngIf="handleError('categoryName', 'required')">
+                              You must provide<strong>Category Name!</strong>
+                            </mat-error>
+                          </mat-form-field>
+
+
+
+                        <div class="button-row">
+                            <button mat-raised-button color="primary" type="submit"
+                                [disabled]="myForm.invalid" mat-dialog-close>
+                                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                              Submit</button>
+                            <button mat-raised-button color="warn" mat-dialog-close >Close</button>
+                        </div>
+
+        </form>
+    </mat-card>
+
+
+
+</div>
+<br>
+
+<div class="title-group">
+    <mat-divider></mat-divider>
+    <h3 class="mat-h1">
+     <strong>Ensure you are submitting correct name for Categories because it will hold alot of data associated with it.</strong> 
+   </h3>
+</div>

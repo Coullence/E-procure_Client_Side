@@ -1,0 +1,75 @@
+<!-- Title group  -->
+
+<h3 class="mat-h1">Staffs Requests</h3>
+
+
+      
+      <p *ngIf="RequestData.length <= 0" class="no-data">There is no Data yet added yet!
+    
+            <span *ngIf="loading" ><mat-progress-bar mode="indeterminate"></mat-progress-bar></span>
+      </p>
+      
+      <div class="container-fluid" *ngIf="RequestData.length > 0">
+        <div class="mat-elevation-z8">
+          
+    
+            
+          <div class="table-head">
+            <mat-form-field class="search-form-field" floatLabel="never">
+              
+              <input matInput [(ngModel)]="searchKey" placeholder="Search? Start Typing..." autocomplete="off" (keyup)="applyFilter()">
+              <button mat-button matSuffix mat-icon-button aria-label="Clear"*ngIf="searchKey"  (click)="onSearchClear()">
+                <mat-icon>close</mat-icon>
+              </button>
+              
+            </mat-form-field>
+            
+          <table id="myData" mat-table [dataSource]="dataSource">
+    
+
+            <ng-container matColumnDef="Status">
+                <th mat-header-cell *matHeaderCellDef> Status </th>
+                <td mat-cell *matCellDef="let element"> {{element.Status}} </td>
+              </ng-container>
+      
+            <ng-container matColumnDef="itemCategory">
+              <th mat-header-cell *matHeaderCellDef> Request Category </th>
+              <td mat-cell *matCellDef="let element"> {{element.itemCategory}} &nbsp;   {{element.lastName}} </td>
+            </ng-container>
+            
+              <ng-container matColumnDef="requestedItem">
+                <th mat-header-cell *matHeaderCellDef> Item Name</th>
+                <td mat-cell *matCellDef="let element"> {{element.requestedItem}} </td>
+              </ng-container>
+              
+              <ng-container matColumnDef="itemQuantity">
+                <th mat-header-cell *matHeaderCellDef> Item Quantity </th>
+                <td mat-cell *matCellDef="let element"> {{element.itemQuantity}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="requestStatus">
+                <th mat-header-cell *matHeaderCellDef> Request Status </th>
+                <td mat-cell *matCellDef="let element"> {{element.requestStatus}} </td>
+              </ng-container>
+              
+              
+              
+              
+              <ng-container matColumnDef="createdAt">
+                <th mat-header-cell *matHeaderCellDef>Requested on </th>
+                <td mat-cell *matCellDef="let element"> {{element.createdAt}} </td>
+              </ng-container>
+      
+      
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+
+      
+          <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+        </div>
+      </div>
+    </div>
+      
+    <br>
+    <a routerLink="/Admin/managerequests">Readmore...</a>

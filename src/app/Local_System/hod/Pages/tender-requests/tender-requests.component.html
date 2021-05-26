@@ -1,0 +1,105 @@
+
+<!-- Title group  -->
+<mat-card>
+    <div class="title-group">
+        <h3 class="mat-h1">
+        <a routerLink="/Admin">Dashboard > </a>
+         <strong>Manage Store</strong> 
+        </h3>
+        <mat-divider></mat-divider>
+    </div>
+      
+      
+      <p *ngIf="tendersData.length <= 0" class="no-data">There is no New users yet added yet!</p>
+      
+      <div class="container-fluid" *ngIf="tendersData.length > 0">
+    
+                <div class="row">
+    
+    
+              <div class="col-md-12 col-sm-12">
+    
+        <div class="tableData mat-elevation-z8">
+          
+            <span *ngIf="loading" ><mat-progress-bar mode="indeterminate"></mat-progress-bar></span>
+    
+    
+    
+              <!-- Table entrance -->
+    
+          <div class="table-head">
+            
+            <mat-form-field class="search-form-field" floatLabel="never">
+              
+              <input matInput [(ngModel)]="searchKey" placeholder="Search? Start Typing..." autocomplete="off" (keyup)="applyFilter()">
+              <button mat-button matSuffix mat-icon-button aria-label="Clear"*ngIf="searchKey"  (click)="onSearchClear()">
+                <mat-icon>close</mat-icon>
+              </button>
+              
+            </mat-form-field>
+    
+          <table id="myData" mat-table [dataSource]="dataSource">
+    
+    
+              <ng-container matColumnDef="tenderStatus">
+                <th mat-header-cell *matHeaderCellDef>Tender Status</th>
+                <td mat-cell *matCellDef="let element">  <span class="{{element.tenderStatus}}"> {{element.tenderStatus}} </span> </td>
+              </ng-container>
+              
+              <ng-container matColumnDef="itemName">
+                <th mat-header-cell *matHeaderCellDef> Item Name </th>
+                <td mat-cell *matCellDef="let element" > {{element.itemName}} </td>
+              </ng-container>
+              
+            <ng-container matColumnDef="itemQuantity">
+                <th mat-header-cell *matHeaderCellDef> Item Quantity </th>
+                <td mat-cell *matCellDef="let element"> <span class="{{element.Status}}">{{element.itemQuantity}}</span>  </td>
+              </ng-container>
+
+              <ng-container matColumnDef="vendorQuotation">
+                  <th mat-header-cell *matHeaderCellDef> Quotation per Unit </th>
+                  <td mat-cell *matCellDef="let element"> <span class="{{element.Status}}">{{element.vendorQuotation}}</span>  </td>
+                </ng-container>
+              
+              
+              <ng-container matColumnDef="createdAt">
+                <th mat-header-cell *matHeaderCellDef>To start on </th>
+                <td mat-cell *matCellDef="let element"> {{element.createdAt}} </td>
+              </ng-container>
+    
+              <ng-container matColumnDef="updatedAt">
+                <th mat-header-cell *matHeaderCellDef>Created On </th>
+                <td mat-cell *matCellDef="let element"> {{element.updatedAt}} </td>
+              </ng-container>
+      
+              <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef> Action </th>
+                <td mat-cell *matCellDef="let element; let i = index;">
+                  
+            <button mat-raised-button color="primary" class="push-right actionButton"
+            [routerLink]="['/Admin/viewTenderRequest/', element._id]"><mat-icon>launch</mat-icon></button>
+                </td>
+              </ng-container>
+      
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+    
+          <h3><span>Export data as:<span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span></span></h3>
+    <button class="exportButton" mat-raised-button color="primary" (click)="exportAs('pdf', 'portrait')">  <mat-icon>picture_as_pdf</mat-icon>Pdf</button>
+    <button class="exportButton" mat-raised-button color="accent" (click)="exportAs('png')"><mat-icon>perm_media</mat-icon>png</button>
+    <button class="exportButton" mat-raised-button color="success" (click)="exportAs('csv')">csv</button>
+    <button class="exportButton" mat-raised-button color="primary" (click)="exportAs('xlsx')">Ms-Excel</button>
+    <button class="exportButton" mat-raised-button color="primary" (click)="exportAs('txt')">MS-Word</button>
+    <button class="exportButton" mat-raised-button color="green" (click)="exportAs('json')">json</button>
+      
+          <mat-paginator [pageSizeOptions]="[6, 12, 24]" showFirstLastButtons></mat-paginator>
+        </div>
+            </div>
+            </div>
+        <!-- Table ending -->
+      </div>
+    </div>
+    </mat-card>
+      
+    

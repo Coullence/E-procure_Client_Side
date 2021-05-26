@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>
+    <img src="../../../../assets/Images/logo3.png"></span>
+
+
+
+
+  <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
+
+
+
+
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+   
+
+      <button mat-menu-item (click)="logout()" >
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Logout</span>
+      </button>
+
+      </mat-menu>
+  </div>
+
+  <mat-icon>help_outline</mat-icon>
+
+
+
+
+
+</mat-toolbar>

@@ -1,0 +1,43 @@
+<mat-card class="mat-elevation-z8">
+  <h1>Update User Status</h1>
+  <p>
+        	Update the user status so that he or she can be able to login as a satff to access Staff priviladges on user Dasboard. Proceed Now to Update user Data.
+  </p>
+
+
+  <!-- Form -->
+  <div class="inner-wrapper">
+    <form [formGroup]="requestsForm" (ngSubmit)="updateRequestsForm()" #resetRequestsForm="ngForm" novalidate>
+      <!-- Left block -->
+
+      <!-- Name -->
+
+      <!-- Section -->
+      <mat-form-field>
+        <mat-label>Requests Status</mat-label>
+        
+
+        <mat-select formControlName="role">
+          <mat-option [value]="requestsStatusArray" *ngFor="let  requestsStatusArray of  RequestsStatusArray">
+            {{ requestsStatusArray}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="handleError('role', 'required')">
+          Requests Status is required
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Submit & Reset -->
+
+      <div class="full-wrapper button-wrapper">
+
+        <div class="button-row">
+          <button mat-raised-button color="primary" type="submit" [disabled]="requestsForm.invalid">Update Priviladges</button>
+          
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+</mat-card>

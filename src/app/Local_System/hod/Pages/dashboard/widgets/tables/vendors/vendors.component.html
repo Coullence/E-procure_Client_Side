@@ -1,0 +1,52 @@
+
+  <h3>Tenders Requests</h3>
+  
+  <p *ngIf="TenderReqData.length <= 0" class="no-data">There is no Employee added yet!</p>
+  
+  <div class="container-fluid" *ngIf="TenderReqData.length > 0">
+    <div class="mat-elevation-z8">
+        <mat-form-field class="search-form-field" floatLabel="never">
+        
+            <input matInput [(ngModel)]="searchKey" placeholder="Search? Start Typing..." autocomplete="off" (keyup)="applyFilter()">
+            <button mat-button matSuffix mat-icon-button aria-label="Clear"*ngIf="searchKey"  (click)="onSearchClear()">
+              <mat-icon>close</mat-icon>
+            </button>
+            
+          </mat-form-field>
+      <table mat-table [dataSource]="dataSource">
+        
+  
+        <ng-container matColumnDef="vendorCompany">
+          <th mat-header-cell *matHeaderCellDef> Vendors Company </th>
+          <td mat-cell *matCellDef="let element"> {{element.vendorCompany}} </td>
+        </ng-container>
+
+
+          <ng-container matColumnDef="vendorQuotation">
+            <th mat-header-cell *matHeaderCellDef> Vendor Quotatation </th>
+            <td mat-cell *matCellDef="let element"> {{element.vendorQuotation}} </td>
+          </ng-container>
+          <ng-container matColumnDef="tenderCategory">
+            <th mat-header-cell *matHeaderCellDef>Tender Category </th>
+            <td mat-cell *matCellDef="let element"> {{element.tenderCategory}} </td>
+          </ng-container>
+
+
+          <ng-container matColumnDef="progress">
+            <th mat-header-cell *matHeaderCellDef> Progress</th>
+            <td mat-cell *matCellDef="let element"> {{element.progress}} </td>
+          </ng-container>
+  
+
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+  
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    </div>
+  </div>
+  <br>
+  <a routerLink="/Admin/managevendors">Readmore...</a>
+
+  
